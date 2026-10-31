@@ -68,38 +68,39 @@ fi
 # Print the menu
 PRINT()
 {
-	echo -e "                                                 ${BOLD_BLUE}${UNDERLINE}Welcome To CRB-Linux Kitchen - By DaemonMCR${RESET}${RESET}"
+	echo -e "                                                 ${BOLD_BLUE}${UNDERLINE}Welcome To Lunar Kitchen - By DaemonMCR${RESET}${RESET}"
 	echo -e "${BOLD_RED}**PROJECT MANAGEMENT**${RESET}                                    ${BOLD}${PINK}${UNDERLINE}Selected Project: $CURRENT_PROJECT${RESET}${RESET}${RESET}"
 	echo -e "1)  New Project"
 	echo -e "2)  Select Project"
 	echo -e "3)  Delete Projects"
 	echo -e ""
 
-	echo -e "${BOLD_GREEN}**UNPACK IMAGE**${RESET}"
+	echo -e "${BOLD_CYAN}**UNPACK IMAGE**${RESET}"
 	echo -e "4)  Unpack super.img"
 	echo -e "5)  Unpack AOSP ROM"
 	echo -e "6)  Unpack prism.img"
 	echo -e "7)  Unpack optics.img"
 	echo -e "8)  Unpack boot.img"
+	echo -e "9)  Unpack vendor.img"
 	echo -e ""
 
 	echo -e "${BOLD_YELLOW}**REPACK IMAGE**${RESET}"
-    echo -e "9)  Repack super.img"
-	echo -e "10) Repack AOSP ROM"
-    echo -e "11) Repack boot.img"
-	echo -e "12) Package ROM"
+    echo -e "10) Repack super.img"
+	echo -e "11) Repack AOSP ROM"
+    echo -e "12) Repack boot.img"
+	echo -e "13) Package ROM"
 	echo -e ""
 
 	echo -e "${BOLD_MAGENTA}**MISC**${RESET}"
-	echo -e "13) Mount partitions"
-	echo -e "14) Un-Mount partitions"
-	echo -e "15) Re-size partitions"
-	echo -e "16) Disable vbmeta"
-	echo -e "17) Debloater Tool"
+	echo -e "14) Mount partitions"
+	echo -e "15) Un-Mount partitions"
+	echo -e "16) Re-size partitions"
+	echo -e "17) Disable vbmeta"
+	echo -e "18) Debloater Tool"
 	echo -e ""
 
 	echo -e "${BOLD_RED}**QUIT**${RESET}"
-    echo -e "18) Exit this menu"
+    echo -e "19) Exit this menu"
 	echo -e ""
 }
 
@@ -154,41 +155,45 @@ MAIN()
 				;;
 			9)
 				CHECK_PROJECT_EXISTS
-				bash scripts/repack_super.sh
+				bash scripts/unpack_vendor.sh
 				;;
 			10)
 				CHECK_PROJECT_EXISTS
-				bash scripts/repack_AOSP_ROM.sh
+				bash scripts/repack_super.sh
 				;;
 			11)
 				CHECK_PROJECT_EXISTS
-				bash scripts/repack_boot.sh
+				bash scripts/repack_AOSP_ROM.sh
 				;;
 			12)
 				CHECK_PROJECT_EXISTS
-				bash scripts/package_rom.sh
+				bash scripts/repack_boot.sh
 				;;
 			13)
 				CHECK_PROJECT_EXISTS
-				bash scripts/mount.sh
+				bash scripts/package_rom.sh
 				;;
 			14)
 				CHECK_PROJECT_EXISTS
-				bash scripts/unmount.sh
+				bash scripts/mount.sh
 				;;
 			15)
 				CHECK_PROJECT_EXISTS
-				bash scripts/resize_partition.sh
+				bash scripts/unmount.sh
 				;;
 			16)
 				CHECK_PROJECT_EXISTS
-				bash scripts/disable_vbmeta.sh
+				bash scripts/resize_partition.sh
 				;;
 			17)
 				CHECK_PROJECT_EXISTS
-				bash scripts/debloat_tool.sh
+				bash scripts/disable_vbmeta.sh
 				;;
 			18)
+				CHECK_PROJECT_EXISTS
+				bash scripts/debloat_tool.sh
+				;;
+			19)
 				echo "Exiting..."
 				exit 0
 				;;

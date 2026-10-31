@@ -9,7 +9,7 @@ echo ""
 if [ -e "$super_img_path/super.img" ]; then
 
     echo "Super.img located!"
-    echo "Copying to CRB..."
+    echo "Copying to Lunar Kitchen..."
     cp -f $super_img_path/super.img ./Projects/$PROJECT/Input/
     
     echo ""

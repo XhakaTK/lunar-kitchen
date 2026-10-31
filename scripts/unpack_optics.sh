@@ -13,7 +13,7 @@ if [ -e "$optics_img_path/optics.img" ]; then
     mkdir -p ./Projects/$PROJECT/Build/optics/
 
     echo "optics.img located!"
-    echo "Copying to CRB..."
+    echo "Copying to Lunar Kitchen..."
     cp -f $optics_img_path/optics.img ./Projects/$PROJECT/Input/
 
     FILE_TYPE=$(file ./Projects/$PROJECT/Input/optics.img)
@@ -34,7 +34,7 @@ if [ -e "$optics_img_path/optics.img" ]; then
         sleep 1.5
 
     else
-        echo "Raw image detected! Moving to CRB..."
+        echo "Raw image detected! Moving to Lunar Kitchen..."
         mv ./Projects/$PROJECT/Input/prism.img ./Projects/$PROJECT/Output/prism.img
         
         echo "Extracting filesystem..."

@@ -82,14 +82,14 @@ PACKAGE_1()
     cp -f ./Projects/$PROJECT/Output/super.img ./tools/packaging/choice_1/
 
     cd ./tools/packaging/choice_1/
-    zip -r CRB-RECOVERY-FLASHABLE-SUPER.zip *
+    zip -r LUNAR-RECOVERY-FLASHABLE-SUPER.zip *
 
-    mv CRB-RECOVERY-FLASHABLE-SUPER.zip ../../../Projects/$PROJECT/Output/
+    mv LUNAR-RECOVERY-FLASHABLE-SUPER.zip ../../../Projects/$PROJECT/Output/
     rm -rf ./super.img
 
     cd ../..
 
-    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/CRB-RECOVERY-FLASHABLE-SUPER.zip"
+    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/LUNAR-RECOVERY-FLASHABLE-SUPER.zip"
     echo "Install via adb sideload in a custom recovery"
 }
 
@@ -101,14 +101,14 @@ PACKAGE_2()
     cp -f ./Projects/$PROJECT/Output/boot.img ./tools/packaging/choice_2/
 
     cd ./tools/packaging/choice_2/
-    zip -r CRB-RECOVERY-FLASHABLE-BOOT.zip *
+    zip -r LUNAR-RECOVERY-FLASHABLE-BOOT.zip *
 
-    mv CRB-RECOVERY-FLASHABLE-BOOT.zip ../../../Projects/$PROJECT/Output/
+    mv LUNAR-RECOVERY-FLASHABLE-BOOT.zip ../../../Projects/$PROJECT/Output/
     rm -rf ./boot.img
 
     cd ../..
 
-    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/CRB-RECOVERY-FLASHABLE-BOOT.zip"
+    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/LUNAR-RECOVERY-FLASHABLE-BOOT.zip"
     echo "Install via adb sideload in a custom recovery"
 }
 
@@ -122,15 +122,15 @@ PACKAGE_3()
     cp -f ./Projects/$PROJECT/Output/boot.img ./tools/packaging/choice_3/
 
     cd ./tools/packaging/choice_3/
-    zip -r CRB-RECOVERY-FLASHABLE-SUPER-BOOT.zip *
+    zip -r LUNAR-RECOVERY-FLASHABLE-SUPER-BOOT.zip *
 
-    mv CRB-RECOVERY-FLASHABLE-SUPER-BOOT.zip ../../../Projects/$PROJECT/Output/
+    mv LUNAR-RECOVERY-FLASHABLE-SUPER-BOOT.zip ../../../Projects/$PROJECT/Output/
     rm -rf ./super.img
     rm -rf ./boot.img
 
     cd ../..
 
-    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/CRB-RECOVERY-FLASHABLE-SUPER-BOOT.zip"
+    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/LUNAR-RECOVERY-FLASHABLE-SUPER-BOOT.zip"
     echo "Install via adb sideload in a custom recovery"
 }
 
@@ -144,15 +144,15 @@ PACKAGE_4()
     cp -f ./Projects/$PROJECT/Output/optics.img ./tools/packaging/choice_4/
 
     cd ./tools/packaging/choice_4/
-    zip -r CRB-RECOVERY-FLASHABLE-CSC.zip *
+    zip -r LUNAR-RECOVERY-FLASHABLE-CSC.zip *
 
-    mv CRB-RECOVERY-FLASHABLE-CSC.zip ../../../Projects/$PROJECT/Output/
+    mv LUNAR-RECOVERY-FLASHABLE-CSC.zip ../../../Projects/$PROJECT/Output/
     rm -rf ./prism.img
     rm -rf ./optics.img
 
     cd ../..
 
-    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/CRB-RECOVERY-FLASHABLE-CSC.zip"
+    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/LUNAR-RECOVERY-FLASHABLE-CSC.zip"
     echo "Install via adb sideload in a custom recovery"
 }
 
@@ -170,9 +170,9 @@ PACKAGE_5()
     cp -f ./Projects/$PROJECT/Output/optics.img ./tools/packaging/choice_5/
 
     cd ./tools/packaging/choice_5/
-    zip -r CRB-RECOVERY-FLASHABLE-ROM.zip *
+    zip -r LUNAR-RECOVERY-FLASHABLE-ROM.zip *
 
-    mv CRB-RECOVERY-FLASHABLE-ROM.zip ../../../Projects/$PROJECT/Output/
+    mv LUNAR-RECOVERY-FLASHABLE-ROM.zip ../../../Projects/$PROJECT/Output/
     rm -rf ./super.img
     rm -rf ./boot.img
     rm -rf ./prism.img
@@ -180,7 +180,7 @@ PACKAGE_5()
 
     cd ../..
 
-    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/CRB-RECOVERY-FLASHABLE-ROM.zip"
+    echo "Done, Flashable zip located at ./Projects/$PROJECT/Output/LUNAR-RECOVERY-FLASHABLE-ROM.zip"
     echo "Install via adb sideload in a custom recovery"
 }
 

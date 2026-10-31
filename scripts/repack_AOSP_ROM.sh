@@ -21,10 +21,10 @@ if [ -e "./Projects/$PROJECT/Output/system.img" ] && [ -e "./Projects/$PROJECT/O
     ./../../../tools/img2sdat/img2sdat.py odm.sparse -o ./AOSP_ROM/ -v 4
 
     cd AOSP_ROM/
-    zip -r CRB-AOSP-PACKAGED-ROM.zip *
+    zip -r LUNAR-AOSP-PACKAGED-ROM.zip *
 
     echo ""
-    echo "ROM has been built and is located at: Projects/$PROJECT/Output/AOSP_ROM/CRB-AOSP-PACKAGED-ROM.zip"
+    echo "ROM has been built and is located at: Projects/$PROJECT/Output/AOSP_ROM/LUNAR-AOSP-PACKAGED-ROM.zip"
     cd ..
     rm -rf *.sparse
     echo "Done!"

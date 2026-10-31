@@ -1,4 +1,4 @@
-# **CRB Kitchen for Linux**
+# **Lunar Kitchen for Linux**
 
 ## Information
 
@@ -20,7 +20,7 @@ How To Use:
 
 	$ ./start.sh
 
-- This will list all of the available options within CRB
+- This will list all of the available options within Lunar Kitchen
 - It is recommended to first Create a New Project
 - Then Unpack any images
 - Edit the data

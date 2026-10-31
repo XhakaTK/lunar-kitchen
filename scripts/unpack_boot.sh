@@ -12,7 +12,7 @@ if [ -e "$boot_img_path/boot.img" ]; then
         sudo rm -rf ./Projects/$PROJECT/Build/boot/
     fi
 
-	echo "Copying to CRB..."
+	echo "Copying to Lunar Kitchen..."
 
     mkdir -p ./Projects/$PROJECT/Build/boot/
     cp -f ./tools/AIK-Linux/* -r ./Projects/$PROJECT/Build/boot/

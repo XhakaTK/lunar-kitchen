@@ -10,7 +10,7 @@ echo ""
 if [ -e "$AOSP_ROM_ZIP" ]; then
 
     echo "AOSP ROM located!"
-    echo "Copying to CRB..."
+    echo "Copying to Lunar Kitchen..."
     cp -f $AOSP_ROM_ZIP ./Projects/$PROJECT/Input/
 
     echo ""
