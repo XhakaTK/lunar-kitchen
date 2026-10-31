@@ -1,0 +1,5 @@
+x86_64 build made locally from:
+
+  https://github.com/libxzr/vbmeta-disable-verification
+  commit c3897be2dfe6be930f09515ee9c3f2a5bcafc2b8
+  jni/main.c, built with: gcc -O2 -static

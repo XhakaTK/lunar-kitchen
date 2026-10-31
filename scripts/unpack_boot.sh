@@ -1,12 +1,14 @@
 #!/bin/bash
 # Script to un/repack a boot.img file
 
+source "$(dirname "$0")/lib_img.sh"
+
 echo ""
-echo "Specify path to where the boot img is located"
+echo "Specify the path to boot.img, or the folder containing it"
 read -p "PATH: " boot_img_path
 echo ""
 
-if [ -e "$boot_img_path/boot.img" ]; then
+if resolve_img_src "$boot_img_path" boot.img; then
 
     if [ -e ./Projects/$PROJECT/Build/boot/ ]; then
         sudo rm -rf ./Projects/$PROJECT/Build/boot/
@@ -16,7 +18,7 @@ if [ -e "$boot_img_path/boot.img" ]; then
 
     mkdir -p ./Projects/$PROJECT/Build/boot/
     cp -f ./tools/AIK-Linux/* -r ./Projects/$PROJECT/Build/boot/
-    cp -f $boot_img_path/boot.img ./Projects/$PROJECT/Build/boot/boot.img
+    cp -f "$IMG_SRC" ./Projects/$PROJECT/Build/boot/boot.img
     ./Projects/$PROJECT/Build/boot/unpackimg.sh ./Projects/$PROJECT/Build/boot/boot.img
 
 	echo ""
@@ -27,8 +29,7 @@ if [ -e "$boot_img_path/boot.img" ]; then
 else
 
     echo -e "${BOLD_RED}[Error 1] Incorrect path specified!"
-    echo -e "Check a boot.img is present in the directory!"
-    echo -e "Check you didn't include a '/' at the end!${RESET}"
+    echo -e "Give the path to boot.img or to the folder containing it.${RESET}"
     sleep 2
     exit 0
 

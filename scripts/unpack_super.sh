@@ -1,16 +1,18 @@
 #!/bin/bash
 # Script to unpack a super.img file
 
+source "$(dirname "$0")/lib_img.sh"
+
 echo "          "
-echo "Specify path to where the super img is located"
+echo "Specify the path to super.img, or the folder containing it"
 read -p "PATH: " super_img_path
 echo ""
 
-if [ -e "$super_img_path/super.img" ]; then
+if resolve_img_src "$super_img_path" super.img; then
 
     echo "Super.img located!"
     echo "Copying to Lunar Kitchen..."
-    cp -f $super_img_path/super.img ./Projects/$PROJECT/Input/
+    cp -f "$IMG_SRC" ./Projects/$PROJECT/Input/super.img
     
     echo ""
     echo "Extracting Dynamic Partitions..."
@@ -79,9 +81,7 @@ if [ -e "$super_img_path/super.img" ]; then
     echo "Done!"
 else
     echo -e "${BOLD_RED}[Error 1] Incorrect path specified!"
-    echo -e "Check a super.img is present in the directory!"
-    echo -e "Check you didn't include a '/' at the end!"
-    echo -e "Check you didn't include '~' at the start!${RESET}"
+    echo -e "Give the path to super.img or to the folder containing it.${RESET}"
     exit 0
 fi
 

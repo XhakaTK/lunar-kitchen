@@ -1,11 +1,13 @@
 #!/bin/bash
 
+source "$(dirname "$0")/lib_img.sh"
+
 echo "          "
-echo "Specify path to where the prism img is located"
+echo "Specify the path to prism.img, or the folder containing it"
 read -p "PATH: " prism_img_path
 echo ""
 
-if [ -e "$prism_img_path/prism.img" ]; then
+if resolve_img_src "$prism_img_path" prism.img; then
 
     sudo umount ./Projects/$PROJECT/Build/prism/ > /dev/null 2>&1
     rm -rf ./Projects/$PROJECT/Output/prism.img
@@ -14,7 +16,7 @@ if [ -e "$prism_img_path/prism.img" ]; then
 
     echo "prism.img located!"
     echo "Copying to Lunar Kitchen..."
-    cp -f $prism_img_path/prism.img ./Projects/$PROJECT/Input/
+    cp -f "$IMG_SRC" ./Projects/$PROJECT/Input/prism.img
 
     FILE_TYPE=$(file ./Projects/$PROJECT/Input/prism.img)
 

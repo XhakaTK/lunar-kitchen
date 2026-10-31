@@ -1,11 +1,13 @@
 #!/bin/bash
 
+source "$(dirname "$0")/lib_img.sh"
+
 echo "          "
-echo "Specify path to where the vendor img is located"
+echo "Specify the path to vendor.img, or the folder containing it"
 read -p "PATH: " vendor_img_path
 echo ""
 
-if [ ! -e "$vendor_img_path/vendor.img" ]; then
+if ! resolve_img_src "$vendor_img_path" vendor.img; then
     echo -e "${BOLD_RED}[Error 1] vendor.img not found at specified path!${RESET}"
     sleep 1
     exit 0
@@ -17,7 +19,7 @@ mkdir -p ./Projects/$PROJECT/Build/vendor/
 
 echo "vendor.img located!"
 echo "Copying to Lunar Kitchen..."
-cp -f $vendor_img_path/vendor.img ./Projects/$PROJECT/Input/
+cp -f "$IMG_SRC" ./Projects/$PROJECT/Input/vendor.img
 
 INPUT_IMG=./Projects/$PROJECT/Input/vendor.img
 OUTPUT_IMG=./Projects/$PROJECT/Output/vendor.img

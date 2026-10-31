@@ -1,11 +1,13 @@
 #!/bin/bash
 
+source "$(dirname "$0")/lib_img.sh"
+
 echo "          "
-echo "Specify path to where the optics img is located"
+echo "Specify the path to optics.img, or the folder containing it"
 read -p "PATH: " optics_img_path
 echo ""
 
-if [ -e "$optics_img_path/optics.img" ]; then
+if resolve_img_src "$optics_img_path" optics.img; then
 
     sudo umount ./Projects/$PROJECT/Build/optics/ > /dev/null 2>&1
     rm -rf ./Projects/$PROJECT/Output/optics.img
@@ -14,7 +16,7 @@ if [ -e "$optics_img_path/optics.img" ]; then
 
     echo "optics.img located!"
     echo "Copying to Lunar Kitchen..."
-    cp -f $optics_img_path/optics.img ./Projects/$PROJECT/Input/
+    cp -f "$IMG_SRC" ./Projects/$PROJECT/Input/optics.img
 
     FILE_TYPE=$(file ./Projects/$PROJECT/Input/optics.img)
 
@@ -35,13 +37,13 @@ if [ -e "$optics_img_path/optics.img" ]; then
 
     else
         echo "Raw image detected! Moving to Lunar Kitchen..."
-        mv ./Projects/$PROJECT/Input/prism.img ./Projects/$PROJECT/Output/prism.img
+        mv ./Projects/$PROJECT/Input/optics.img ./Projects/$PROJECT/Output/optics.img
         
         echo "Extracting filesystem..."
-        sudo mount -t ext4 -o loop ./Projects/$PROJECT/Output/prism.img ./Projects/$PROJECT/Build/prism/
+        sudo mount -t ext4 -o loop ./Projects/$PROJECT/Output/optics.img ./Projects/$PROJECT/Build/optics/
 
-        echo "Done, any changed made to the prism filesystem will be reflected in the prism.img file,
-        located at ./Projects/$PROJECT/Output/prism.img"
+        echo "Done, any changed made to the optics filesystem will be reflected in the optics.img file,
+        located at ./Projects/$PROJECT/Output/optics.img"
         sleep 1.5
 
     fi
