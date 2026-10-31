@@ -13,8 +13,8 @@ Update Dependencies:
 
 Download The Kitchen:
 
-	$ git clone -b stable https://github.com/samsungexynos850/CRB-Linux.git
-	$ cd CRB-Linux
+	$ git clone -b stable https://github.com/XhakaTK/lunar-kitchen.git
+	$ cd lunar-kitchen
 
 How To Use:
 
@@ -24,8 +24,5 @@ How To Use:
 - It is recommended to first Create a New Project
 - Then Unpack any images
 - Edit the data
-- Then Repack those images
-
-Any Bugs or Questions send me a message [here](https://t.me/thomas_turner36)
-
+- Then Repack those image
 
